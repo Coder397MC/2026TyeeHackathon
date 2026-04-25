@@ -26,7 +26,7 @@ export async function POST(request: Request) {
     console.log("[image] generate", { model, promptPreview: prompt.slice(0, 120) });
     const t0 = Date.now();
 
-    const result = await client.images.generate({ model, prompt });
+    const result = await client.images.generate({ model, prompt, quality: "low" });
     const b64 = result.data?.[0]?.b64_json;
 
     if (!b64) {
