@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import AskForm from "@/components/AskForm";
 import ResultTabs from "@/components/ResultTabs";
 import type { StudyResult } from "@/lib/types";
+import { ThemeToggle } from "@/components/ThemeToggle";
 
 export default function Home() {
   const [loading, setLoading] = useState(false);
@@ -57,10 +58,11 @@ export default function Home() {
               className="h-12 w-auto sm:h-14"
             />
             <div className="hidden h-12 w-px bg-white/30 sm:block" />
-            <div className="text-center sm:text-right">
+            <div className="flex flex-col items-center gap-3 sm:flex-row">
               <div className="text-2xl font-extrabold leading-tight text-white sm:text-3xl">
                 Study Buddy
               </div>
+              <ThemeToggle />
             </div>
           </div>
           <p className="mt-3 text-base text-zinc-600 dark:text-zinc-300">
